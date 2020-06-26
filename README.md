@@ -6,16 +6,18 @@
 |password|string|null: false|
 
 ### Association
-- belongs_to :messages
-- belongs_to :group
+- has_many :messages
+- has_many :groups, through: :groups_users
+- belongs_to :groups_users
 
 ##  groups
 |colum|type|Options|
 |group_name|text|null :false|
 
 ### Association
-- belongs_to :user
-- belongs_to :messages
+- has_many :users, through: :groups_users
+- has_many :messages
+- belongs_to :groups_users
 
 ## groups_users
 |colum|Type|Options|
@@ -24,8 +26,8 @@
 |group_id|integer|null: false,foreign_key: true|
 
 ### Association
-- has_many :groups
-- has_many :users
+- belongs_to :group
+- belongs_to :user
 
 
 ## messages
