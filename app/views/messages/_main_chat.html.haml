@@ -1,0 +1,39 @@
+.main_chat
+  .main_info
+    .main_group
+      .main_group_name
+        test
+      .member_list
+        test
+    .edit_button
+      = link_to "#" do
+        Edit
+  .main_list
+    .message_box
+      .message_info
+        .message_info_name
+          satou
+        .message_info_date
+          2020 09 09
+      .message
+        .message_contents
+          arigatou
+    .message_box
+      .message_info
+        .message_info_name
+          satou
+        .message_info_date
+          2020 09 09
+      .message
+        .message_contents
+          arigatou
+  .main_form
+    .form
+      .form_contents
+        .form_input
+          type a message
+        .form_image
+          = link_to "#", class:"form_icon" do
+            = icon('far', 'image')
+      .form_submit
+        send
