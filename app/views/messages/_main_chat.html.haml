@@ -28,12 +28,10 @@
         .message_contents
           arigatou
   .main_form
-    .form
-      .form_contents
-        .form_input
-          type a message
-        .form_image
-          = link_to "#", class:"form_icon" do
-            = icon('far', 'image')
-      .form_submit
-        send
+    .form_contents
+      %input{type: "text", class: 'form_message_text', placeholder: 'type a message'}
+      -# = text_field  :content, class: 'message_text', placeholder: 'type a message'
+      .form_image
+        = link_to "#", class:"form_icon" do
+          = icon('far', 'image')
+      %input{type:"submit",value: "send" ,class:"message_send_button"}

@@ -113,10 +113,10 @@ justify-content: flex-end;
 }
 
 .main_list{
-  height: calc(100vh - 100px -90px);
+  height: calc(100vh - 100px - 90px);
   background-color: #fafafa;
   padding: 35px 40px 0;
-  height: calc(100vh - 100px -90px);
+  // height: calc(100vh - 100px -90px);
   overflow: scroll;
 }
 
@@ -153,23 +153,29 @@ justify-content: flex-end;
   height: 90px;
   background-color: #d2d2d2;
   padding: 20px 50px 20px 40px;
+
 }
 
 .form{
-  display: flex;
-  justify-content: space-between;
+  width: 200px;
+  // display: flex;
+  // justify-content: space-between;
 }
 
 .form_contents{
   width: 100%;
-  background-color: #ffff;
+  // background-color: #ffff;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+
 }
 
-.form_input{
+.form_message_text{
+  background-color: #ffff;
   border: none;
   height: 50px;
-  width: 100%;
+  width: calc(100% - 115px);
   padding: 0 45px 0 15px;
   color: #999999;
 }
@@ -177,15 +183,17 @@ justify-content: flex-end;
 .form_image{
   height: 50px;
   position: absolute;
-  right: 10px;
+  right: 140px;
+  top: 14px
 }
 
-.form_submit{
+.message_send_button{
   background-color: #38aef0;
   border: none;
   color: #fff;
   font-size: 16px;
   height: 50px;
+  width: 100px;
   margin-left: 15px;
   padding: 0 30px;
 }
