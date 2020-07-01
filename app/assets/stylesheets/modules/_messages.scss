@@ -156,15 +156,8 @@ justify-content: flex-end;
 
 }
 
-.form{
-  width: 200px;
-  // display: flex;
-  // justify-content: space-between;
-}
-
 .form_contents{
   width: 100%;
-  // background-color: #ffff;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -181,10 +174,11 @@ justify-content: flex-end;
 }
 
 .form_image{
+  font-size: 25px;
   height: 50px;
   position: absolute;
-  right: 140px;
-  top: 14px
+  right: 130px;
+  top: 9px
 }
 
 .message_send_button{
@@ -196,4 +190,8 @@ justify-content: flex-end;
   width: 100px;
   margin-left: 15px;
   padding: 0 30px;
+}
+
+.hidden{
+  display: none;
 }
