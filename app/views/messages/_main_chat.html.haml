@@ -2,36 +2,27 @@
   .main_info
     .main_group
       .main_group_name
-        test
+        = @group.name
       .member_list
-        test
+        - @group.users.each do |user|
+          =user.name
     .edit_button
-      = link_to "#" do
+      = link_to edit_group_path(@group) do
         Edit
   .main_list
     .message_box
       .message_info
+        = render @messages
         .message_info_name
-          satou
         .message_info_date
-          2020 09 09
       .message
         .message_contents
-          arigatou
-    .message_box
-      .message_info
-        .message_info_name
-          satou
-        .message_info_date
-          2020 09 09
-      .message
-        .message_contents
-          arigatou
+
   .main_form
-    %form.form_contents
-      %input{type: "text", class: 'form_message_text', placeholder: 'type a message'}
-      .form_image
-        %label{class:"input-box__image"}
-          = icon('far', 'image')
-          %input{type: "file", class: "hidden"}
-      %input{type:"submit",value: "send" ,class:"message_send_button"}
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .form_contents
+        = f.text_field :content, class: 'form_message_text', placeholder: 'type a message'
+        = f.label :image, class: 'form_image' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'message_send_button'
