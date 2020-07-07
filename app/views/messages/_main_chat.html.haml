@@ -10,14 +10,7 @@
       = link_to edit_group_path(@group) do
         Edit
   .main_list
-    .message_box
-      .message_info
-        = render @messages
-        .message_info_name
-        .message_info_date
-      .message
-        .message_contents
-
+    = render @messages
   .main_form
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .form_contents
