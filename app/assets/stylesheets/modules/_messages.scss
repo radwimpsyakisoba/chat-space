@@ -117,12 +117,14 @@ justify-content: flex-end;
   height: calc(100vh - 100px - 90px);
   background-color: #fafafa;
   padding: 35px 40px 0;
-  // height: calc(100vh - 100px -90px);
   overflow: scroll;
+  box-sizing: border-box;
 }
 
 .message_box{
   margin-bottom: 46px;
+
+
 }
 
 .message_info{
