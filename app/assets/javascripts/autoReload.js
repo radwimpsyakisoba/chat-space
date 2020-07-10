@@ -42,7 +42,8 @@ $(function(){
 
     let reloadMessages = function() {
       //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-      let last_message_id = $('.message_box:last').data("message-id");
+      let last_message_id = $('.message_box:last').data("message-id") || 0;
+      console.log(last_message_id);
       $.ajax({
         //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
         url: "api/messages",
@@ -61,13 +62,15 @@ $(function(){
           $.each(messages, function(i, message) {
             insertHTML += buildHTML(message)
           });
+          console.log(messages);
           //メッセージが入ったHTMLに、入れ物ごと追加
-          $('.message_main').append(insertHTML);
-          $('.message_main').animate({ scrikkTop: $('.message_main')[0].scrollHeight});
+          $('.main_list').append(insertHTML);
+          $('.main_list').animate({ scrollTop: $('.main_list')[0].scrollHeight});
         }
       })
       .fail(function(){
       alert('error');
     });
   };
+  setInterval(reloadMessages, 7000);
 });
